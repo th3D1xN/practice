@@ -19,6 +19,7 @@
             int product = digit1 * digit2 * digit3;
 
             Console.WriteLine($"Произведение цифр {digit1}, {digit2}, {digit3} = {product}");
+            Console.ReadKey();
         }
     }
 }

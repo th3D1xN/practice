@@ -15,6 +15,7 @@
             int y = (a * x * x) + (b * x) + c;
 
             Console.WriteLine($"Координаты вершины параболы: x = {x}, y = {y}");
+            Console.ReadKey();
         }
     }
 }

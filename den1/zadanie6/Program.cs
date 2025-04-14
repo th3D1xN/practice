@@ -17,6 +17,7 @@
             int newNumber = remainingDigits * 10 + firstDigit;
 
             Console.WriteLine($"Число с переставленной первой цифрой в конец = {newNumber}");
+            Console.ReadKey();
         }
     }
 }

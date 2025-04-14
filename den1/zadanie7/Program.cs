@@ -28,6 +28,7 @@
             else
             {
                 Console.WriteLine("Результаты различаются.");
+                Console.ReadKey();
             }
         }
     }

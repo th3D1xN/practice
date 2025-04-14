@@ -10,6 +10,7 @@
             double y = part1 - part2;
 
             Console.WriteLine($"y = {y}");
+            Console.ReadKey();
         }
     }
 }

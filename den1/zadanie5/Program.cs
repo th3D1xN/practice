@@ -12,6 +12,7 @@
             double S = a * h / 2;
 
             Console.WriteLine($"Площадь трегольника = {S}");
+            Console.ReadKey();
         }
     }
 }

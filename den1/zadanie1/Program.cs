@@ -12,6 +12,7 @@
             int product = a * b;
 
             Console.WriteLine($"Произведение чисел {a} и {b} = {product}");
+            Console.ReadKey();
         }
     }
 }
