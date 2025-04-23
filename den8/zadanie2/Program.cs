@@ -6,7 +6,7 @@ namespace zadanie2
     {
         static void Main(string[] args)
         {
-            string text = "Вот такой вот простой текст про обновление оболочки операционной системы";
+            string text = "Вот такой вот простой текст";
 
             string result = Regex.Replace(text, "[оО]", match => match.Value + "Oк");
 
