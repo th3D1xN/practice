@@ -28,6 +28,7 @@ namespace zadanie3
         private void ButtonCalculate_Click(object sender, RoutedEventArgs e)
         {
             listBoxResults.Items.Clear();
+            canvasGraph.Children.Clear(); // Очистка предыдущего графика
 
             if (double.TryParse(textBoxXStart.Text, out double xStart) &&
                 double.TryParse(textBoxXEnd.Text, out double xEnd) &&
@@ -39,18 +40,36 @@ namespace zadanie3
                     return;
                 }
 
+                double maxX = xEnd;
+                double maxY = Math.Sqrt(Math.Max(0, xEnd));
+                double width = canvasGraph.ActualWidth;
+                double height = canvasGraph.ActualHeight;
+
+                Polyline graphLine = new Polyline
+                {
+                    Stroke = Brushes.Blue,
+                    StrokeThickness = 2
+                };
+
                 for (double x = xStart; x <= xEnd; x += h)
                 {
                     if (x >= 0)
                     {
                         double y = Math.Sqrt(x);
                         listBoxResults.Items.Add($"x = {x:F2}\ty = {y:F4}");
+
+                        // Преобразуем координаты для Canvas
+                        double px = (x - xStart) / (maxX - xStart) * width;
+                        double py = height - (y / maxY * height);
+                        graphLine.Points.Add(new Point(px, py));
                     }
                     else
                     {
                         listBoxResults.Items.Add($"x = {x:F2}\ty = ОШИБКА (отрицательный x)");
                     }
                 }
+
+                canvasGraph.Children.Add(graphLine);
             }
             else
             {
