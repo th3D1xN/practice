@@ -7,7 +7,7 @@
             {
                 Console.Write("Введите a: ");
                 double a = double.Parse(Console.ReadLine());
-                Console.Write("Введите b: ");
+                Console.Write("Введите b: ");   
                 double b = double.Parse(Console.ReadLine());
                 Console.Write("Введите шаг h: ");
                 double h = double.Parse(Console.ReadLine());

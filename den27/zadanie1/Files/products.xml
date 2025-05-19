@@ -45,4 +45,9 @@
     <ExpiryDate>01.05.2025</ExpiryDate>
     <Price>7</Price>
   </Product>
+  <Product>
+    <Name>яйца</Name>
+    <ExpiryDate>22.02.2025</ExpiryDate>
+    <Price>8</Price>
+  </Product>
 </Products>

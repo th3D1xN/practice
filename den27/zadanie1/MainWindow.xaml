@@ -13,13 +13,29 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
-            <Button x:Name="btnLoad" Content="Загрузить XML" Click="btnLoad_Click" Margin="0 0 10 0"/>
-            <Button x:Name="btnAdd" Content="Добавить товар" Click="btnAdd_Click" IsEnabled="False"/>
-        </StackPanel>
+        <Expander Header="Функциональность" Grid.Row="0" IsExpanded="True">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+                    <Button x:Name="btnLoad" Content="Загрузить XML" Click="btnLoad_Click" Margin="0 0 10 0"/>
+                    <Button x:Name="btnAdd" Content="Добавить товар" Click="btnAdd_Click" IsEnabled="False"/>
+                </StackPanel>
+
+                <GroupBox Header="Компоненты" Margin="0 10 0 0">
+                    <StackPanel>
+                        <RadioButton x:Name="rbTextBlock" Content="TextBlock" GroupName="DisplayType" IsChecked="True" Margin="5"/>
+                        <RadioButton x:Name="rbTreeView" Content="TreeView" GroupName="DisplayType" Margin="5"/>
+                        <RadioButton x:Name="rbListBox" Content="ListBox" GroupName="DisplayType" Margin="5"/>
+                    </StackPanel>
+                </GroupBox>
+            </StackPanel>
+        </Expander>
 
         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
-            <TextBlock x:Name="txtDisplay" TextWrapping="Wrap" />
+            <Grid>
+                <TextBlock x:Name="txtDisplay" TextWrapping="Wrap" Visibility="Visible"/>
+                <TreeView x:Name="treeViewDisplay" Visibility="Collapsed"/>
+                <ListBox x:Name="listBoxDisplay" Visibility="Collapsed"/>
+            </Grid>
         </ScrollViewer>
 
         <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0 10 0 0">
